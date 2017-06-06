@@ -4,7 +4,7 @@ var currentTrackPath = $('#current-track').data("track");
 var currentTrackTitle = $('#current-track').data("title");
 var currentTrackArtist = $('#current-track').data("artist");
 var currentColor = $('#current-track').data("color");
-$('#current').html('<div> Loading ... </div>')
+$('#spanslash').html('<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw smallspin"></i>')
 $('#total').html('')
 
 

@@ -419,6 +419,8 @@ body, html{
   font-family: "Circular-Book";
   font-size: 15px;
   color: white;
+  max-height: 190px;
+  overflow-y: scroll;
 }
 
 .fixed-attempt {
@@ -449,9 +451,44 @@ body, html{
 }
 
 #spanslash {
-  margin-right: 7px;
-  margin-left: 7px;
+  letter-spacing: 0;
 }
+
+.smallspin {
+  font-size: 20px;
+}
+
+#current {
+  width: 50px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#total {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
