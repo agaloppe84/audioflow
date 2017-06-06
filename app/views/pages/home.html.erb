@@ -1,2 +1,59 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div id="container">
+
+  <div id="cover-art" style="background: linear-gradient(190deg, <%= @colors[:first] %>, <%= @colors[:second] %>);">
+    <div id="cover-art-small" class="test-image">
+      <div class="cas-header"><%= @track.artist %></div>
+      <div class="cas-body"><%= @track.artist_description %></div>
+    </div>
+  </div>
+
+  <div id="siri-container" class="hidden"></div>
+
+
+  <div id="current-track" data-track="<%= cl_video_path(@track.audio.path, resource_type: 'video') %>" data-title="<%= @track.name %>" data-artist="<%= @track.artist %>" data-color="<%= @colors[:first] %>"></div>
+
+
+
+<div class="fixed-attempt">
+
+    <div id="wave"></div>
+
+    <div class="second-bar visible-xs">
+      <div class="second-bar-relative">
+        <div class="td-bold"><%= @track.name %></div>
+        <div class="td-thin">by</div>
+        <div class="td-bold"><%= @track.artist %></div>
+        <div class="td-time" style="color: <%= @colors[:first] %>;"><%= @track.year %></div>
+      </div>
+    </div>
+
+
+    <div id="control-bar">
+
+      <div class="player-control">
+        <div id="play-button" title="Play"><i class="fa fa-play"></i></div>
+        <div id="pause-button" title="Pause"><i class="fa fa-pause"></i></div>
+      </div>
+
+      <div id="playlist">
+        <div id="track-details" title="Show playlist">
+          <div id="track-desc" class="hidden-xs">
+            <div class="td-bold"><%= @track.name %></div>
+            <div class="td-thin">by</div>
+            <div class="td-bold"><%= @track.artist %></div>
+            <div class="td-time" style="color: <%= @colors[:first] %>;"><%= @track.year %></div>
+          </div>
+          <div id="track-time">
+            <span id="current">-</span><span id="spanslash"></span><span id="total">-</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+</div>
+
+
+
+</div>
