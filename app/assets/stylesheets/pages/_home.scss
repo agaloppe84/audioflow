@@ -446,8 +446,8 @@ body, html{
 
 #siri-container {
   position: absolute;
-  left: calc(50% - 70px);
-  top: 15px;
+  left: calc(50% - 50px);
+  top: 22px;
 }
 
 #spanslash {
@@ -473,13 +473,39 @@ body, html{
   justify-content: center;
 }
 
+.diamond-icon {
+  font-size: 13px;
+  color: white;
+}
 
+.navbarlink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.navbartext {
+  font-family: "Circular-Book";
+  font-size: 15px;
+  color: white;
+  margin-left: 7px;
+}
 
+.navbartext-bold {
+  font-family: "Circular-Bold";
+  font-size: 15px;
+  color: white;
+}
 
+.dropcolor {
+  color: white;
+}
 
-
-
+.loginnavbar {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  color: white;
+}
 
 
 
