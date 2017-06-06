@@ -6,6 +6,46 @@
 $base-font: "Open Sans", "Helvetica", "sans-serif";
 $header-font: "Raleway", "Helvetica", "sans-serif";
 
+
+@font-face {
+  font-family: 'Circular-Black';
+  src: font-url('Circular-Black.eot?#iefix') format('embedded-opentype'),  font-url('Circular-Black.woff') format('woff'), font-url('Circular-Black.ttf')  format('truetype'), font-url('Circular-Black.svg#Circular-Black') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Circular-Bold';
+  src: font-url('Circular-Bold.eot?#iefix') format('embedded-opentype'),  font-url('Circular-Bold.woff') format('woff'), font-url('Circular-Bold.ttf')  format('truetype'), font-url('Circular-Bold.svg#Circular-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Circular-Book';
+  src: font-url('Circular-Book.eot?#iefix') format('embedded-opentype'),  font-url('Circular-Book.woff') format('woff'), font-url('Circular-Book.ttf')  format('truetype'), font-url('Circular-Book.svg#Circular-Book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Circular-Medium';
+  src: font-url('Circular-Medium.eot?#iefix') format('embedded-opentype'),  font-url('Circular-Medium.woff') format('woff'), font-url('Circular-Medium.ttf')  format('truetype'), font-url('Circular-Medium.svg#Circular-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circular-Light';
+  src: font-url('Brown-Light.eot?#iefix') format('embedded-opentype'),  font-url('Brown-Light.woff') format('woff'), font-url('Brown-Light.ttf')  format('truetype'), font-url('Brown-Light.svg#Brown-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 // Local fonts (uncomment following lines)
 // @font-face {
 //   font-family: "Font Name";
