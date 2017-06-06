@@ -28,6 +28,7 @@ wavesurfer.on('ready', function () {
   $('#current').text('0:00');
   $('#total').text(formatTime(duration));
   $('#spanslash').text('/')
+  $(".player-control").removeClass('hidden');
 
   clearInterval(timer);
   timer = setInterval(function() {
