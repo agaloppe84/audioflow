@@ -8,7 +8,9 @@
     </div>
   </div>
 
-  <div id="siri-container" class="hidden"></div>
+  <div id="siri-container"></div>
+
+  <div id="little-timer"></div>
 
 
   <div id="current-track" data-track="<%= cl_video_path(@track.audio.path, resource_type: 'video') %>" data-title="<%= @track.name %>" data-artist="<%= @track.artist %>" data-color="<%= @colors[:first] %>"></div>

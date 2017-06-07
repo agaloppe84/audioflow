@@ -6,7 +6,7 @@
 //= require attachinary
 //= require init_attachinary
 //= require wavesurfer
+//= require siriwave
 //= require custom_player
 //= require id3-minimized
-//= require siriwave
 //= require init_siri

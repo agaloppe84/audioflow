@@ -1,3 +1,15 @@
+var siriWave = new SiriWave({
+    container: document.getElementById('siri-container'),
+    width: 60,
+    height: 20,
+    speed: 0.04,
+    color: '#fff',
+    frequency: 2.60,
+    autostart: false,
+    amplitudeInterpolationSpeed: 0.05,
+    style: 'default'
+});
+
 
 var timer = 0;
 var currentTrackPath = $('#current-track').data("track");
@@ -33,12 +45,17 @@ wavesurfer.on('ready', function () {
   clearInterval(timer);
   timer = setInterval(function() {
     $('#current').text(formatTime(wavesurfer.getCurrentTime()));
+    $('#little-timer').text(formatTime(wavesurfer.getCurrentTime()));
+    var amp = Math.floor(Math.random() * 2) + 0.5
+    var amp2 = Math.floor(Math.random() * 0.5) + 0.1
+    siriWave.setAmplitude(amp);
+    siriWave.setSpeed(amp2);
   }, 1000);
 
 });
 
 wavesurfer.on('finish', function () {
-  $('#siri-container').addClass('hidden');
+  siriWave.stop();
 });
 
 
@@ -53,13 +70,14 @@ wavesurfer.on('seek', function () {
 $('#play-button').on('click', function(){
 	wavesurfer.play();
   $(this).css("color", currentColor);
-  $('#siri-container').removeClass('hidden');
+  siriWave.start();
+  siriWave.setSpeed(0.04);
 });
 
 $('#pause-button').on('click', function () {
 	wavesurfer.playPause();
   $('#play-button').css("color", "white");
-  $('#siri-container').addClass('hidden');
+  siriWave.stop();
 });
 
 $('#stop-button').on('click', function(){

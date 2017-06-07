@@ -15,6 +15,14 @@ class ApplicationController < ActionController::Base
     colors_lighter[number]
   end
 
+  def weekly_songs
+    @number = 0
+    @day = DateTime.now.day
+    @id = @day
+    @tracks = Track.all
+    @track = @tracks.find(@id - (@id - @tracks.count))
+
+  end
 
 
 end

@@ -3,8 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @track = Track.all.sample
-
-
     @number = rand(0..5)
     @colors = {}
     @colors[:first] = dynamic_color(@number)
