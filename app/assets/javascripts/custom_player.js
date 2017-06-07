@@ -24,7 +24,7 @@ var wavesurfer = Object.create(WaveSurfer);
 
 wavesurfer.init({
   container: document.querySelector('#wave'),
-  cursorColor: '#aaa',
+  cursorColor: 'transparent',
   cursorWidth: 1,
   height: 80,
   waveColor: 'rgba(255,255,255,0.9)',
