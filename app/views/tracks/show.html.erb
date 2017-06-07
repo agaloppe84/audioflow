@@ -5,6 +5,11 @@
     <div id="cover-art-small" class="test-image">
       <div class="cas-header"><%= @track.artist %></div>
       <div class="cas-body"><%= @track.name %></div>
+      <div class="display-flex" style="height: 20px;">
+        <div class="small-infos-space"><%= @track.year %></div>
+        <div class="separator"></div>
+        <div class="small-infos-space"><%= @track.category.name.upcase %></div>
+      </div>
     </div>
   </div>
 
