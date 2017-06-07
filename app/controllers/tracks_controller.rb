@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :new, :create, :show, :index, :edit, :update ]
-  before_action :set_track
+  before_action :set_category
 
   def new
     @track = Track.new
@@ -44,10 +44,10 @@ class TracksController < ApplicationController
   private
 
   def tracks_params
-    params.require(:track).permit(:name, :artist, :category_id, :playable_at, :audio)
+    params.require(:track).permit(:name, :artist, :category_id, :playable_at, :year, :audio)
   end
 
-  def set_track
+  def set_category
      @categories = Category.all
   end
 
