@@ -1,0 +1,20 @@
+
+<div class="form-paddings">
+
+  <%= simple_form_for (@track) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category, collection: @categories %>
+    <%= f.input :artist %>
+    <%= f.input :audio, as: :attachinary %>
+    <%= f.submit "Go!!" %>
+  <% end %>
+
+</div>
+
+
+
+<script>
+  $(document).ready(function() {
+    $('.attachinary-input').attachinary();
+  });
+</script>

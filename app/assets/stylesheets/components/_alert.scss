@@ -3,13 +3,43 @@
 * ------------------------------------- */
 
 .alert {
-  margin: 0;
-  text-align: center;
+  position: fixed;
+  width: 50%;
+  height: 40px;
+  left: 25%;
+  top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
   color: white;
+  font-family: "Circular-Medium";
 }
+
 .alert-info {
-  background: $green;
+  position: fixed;
+  width: 50%;
+  height: 40px;
+  left: 25%;
+  top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: white;
+  font-family: "Circular-Medium";
 }
+
 .alert-warning {
-  background: $red;
+  position: fixed;
+  width: 50%;
+  height: 40px;
+  left: 25%;
+  top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: white;
+  font-family: "Circular-Medium";
 }

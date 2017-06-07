@@ -682,7 +682,15 @@ body, html{
 }
 
 
-
+.form-paddings {
+  width: 60%;
+  margin-left: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 
 
