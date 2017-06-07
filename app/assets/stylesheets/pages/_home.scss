@@ -4,14 +4,6 @@ body, html{
   -webkit-font-smoothing: antialiased;
 }
 
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-user-select:none;
-  -ms-user-select:none;
-  user-select:none;
-}
 
 /*--------------------
   The file dropzone
@@ -61,7 +53,14 @@ body, html{
   align-items: center;
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
+}
+
+#home-background{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 #cover-art-big{
@@ -706,11 +705,11 @@ body, html{
 
 @media (min-width: 768px){
   .cas-header {
-    font-size: 25px;
+    font-size: 19px;
   }
 
   .cas-body {
-    font-size: 17px;
+    font-size: 13px;
   }
 
    .td-bold {
@@ -775,19 +774,22 @@ body, html{
   width: 100%;
 }
 
-
-.left-button {
+.buttons-fixed-home {
   position: fixed;
-  bottom: 25px;
-  left: 60px;
+  bottom: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
 }
 
-
+.left-button {
+  margin-right: 10px;
+}
 
 .right-button {
-  position: fixed;
-  bottom: 25px;
-  right: 60px;
+  margin-left: 10px;
 }
 
 

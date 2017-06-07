@@ -7,7 +7,6 @@
 //= require init_attachinary
 //= require wavesurfer
 //= require siriwave
-//= require custom_player
 //= require id3-minimized
 //= require init_siri
 //= require alert

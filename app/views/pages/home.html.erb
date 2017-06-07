@@ -1,7 +1,7 @@
 
 
 
-<div id="cover-art" style="background: linear-gradient(190deg, <%= @colors[:first] %>, <%= @colors[:second] %>);">
+<div id="home-background" style="background: linear-gradient(190deg, <%= @colors[:first] %>, <%= @colors[:second] %>);">
     <div id="cover-art-small" class="test-image" style="justify-content: center;">
 
 
@@ -9,7 +9,24 @@
 
         <div class="cas-header"><%= @track.artist %></div>
         <div class="cas-body"><%= @track.name %></div>
-        <%= link_to "listen", track_path(@track), class: "home-signin-button" %>
+
+        <% if user_signed_in? %>
+          <%= link_to "listen", track_path(@track), class: "home-signin-button" %>
+        <% else%>
+
+          <div class="buttons-fixed-home">
+            <div>
+              <%= link_to "Sign up", new_user_registration_path, class: "home-signin-button left-button" %>
+            </div>
+            <div>
+              <%= link_to "Sign in", new_user_session_path, class: "home-signin-button right-button" %>
+            </div>
+          </div>
+
+
+        <% end %>
+
+
 
         <div class="cas-body" style="letter-spacing: 4px;margin-top: 50px;">GEM OF TOMMOROW</div>
 
@@ -23,7 +40,7 @@
 
 
         <div class="display-flex">
-          <div class="navbartext" style="font-size: 12px;">A new truly unique masterpiece each day .... for free</div>
+          <div class="navbartext" style="font-size: 12px;margin-left: 0;">A new truly unique masterpiece each day .... for free</div>
         </div>
 
       </div>
@@ -31,3 +48,5 @@
 
     </div>
 </div>
+
+
