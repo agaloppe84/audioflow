@@ -10,3 +10,4 @@
 //= require custom_player
 //= require id3-minimized
 //= require init_siri
+//= require alert

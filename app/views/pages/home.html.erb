@@ -1,61 +1,42 @@
 
-<div id="container">
-
-  <div id="cover-art" style="background: linear-gradient(190deg, <%= @colors[:first] %>, <%= @colors[:second] %>);">
-    <div id="cover-art-small" class="test-image">
-      <div class="cas-header"><%= @track.artist %></div>
-      <div class="cas-body"><%= @track.name %></div>
-    </div>
-  </div>
-
-  <div id="siri-container"></div>
-
-  <div id="little-timer"></div>
-
-  <i class="fa fa-volume-up" id="toggle-volume" aria-hidden="true"></i>
 
 
-  <div id="current-track" data-track="<%= cl_video_path(@track.audio.path, resource_type: 'video') %>" data-title="<%= @track.name %>" data-artist="<%= @track.artist %>" data-color="<%= @colors[:first] %>"></div>
+<div id="cover-art" style="background: linear-gradient(190deg, <%= @colors[:first] %>, <%= @colors[:second] %>);">
+    <div id="cover-art-small" class="test-image" style="justify-content: center;">
+      <% if user_signed_in? %>
+
+        <div class="cas-body" style="letter-spacing: 4px;">GEM OF THE DAY</div>
+
+        <div class="cas-header"><%= @track.artist %></div>
+        <div class="cas-body"><%= @track.name %></div>
+        <%= link_to "listen", track_path(@track), class: "home-signin-button" %>
+
+        <div class="cas-body" style="letter-spacing: 4px;margin-top: 50px;">GEM OF TOMMOROW</div>
+
+        <div class="cas-header"><%= @tomorrow_track.artist %></div>
+        <div class="cas-body"><%= @tomorrow_track.name %></div>
 
 
+      <% else %>
 
-<div class="fixed-attempt">
-
-    <div id="wave"></div>
-
-    <div class="second-bar visible-xs">
-      <div class="second-bar-relative hidden">
-        <div class="td-bold"><%= @track.name %></div>
-        <div class="td-thin">by</div>
-        <div class="td-bold"><%= @track.artist %></div>
-      </div>
-    </div>
-
-
-    <div id="control-bar">
-
-      <div class="player-control hidden">
-        <div id="play-button" title="Play"><i class="fa fa-play"></i></div>
-        <div id="pause-button" title="Pause"><i class="fa fa-pause"></i></div>
-      </div>
-
-      <div id="playlist">
-        <div id="track-details" title="Show playlist">
-          <div id="track-desc" class="hidden-xs hidden">
-            <div class="td-bold"><%= @track.name %></div>
-            <div class="td-thin">by</div>
-            <div class="td-bold"><%= @track.artist %></div>
-          </div>
-          <div id="track-time">
-            <span id="current"></span><span id="spanslash"></span><span id="total"></span>
-          </div>
+        <i class="fa fa-diamond diamond-icon" aria-hidden="true" style="font-size: 20px;"></i>
+        <div class="display-flex">
+          <div class="navbartext" style="font-size: 23px;">music</div>
+          <div class="navbartext-bold" style="font-size: 23px;">gem</div>
         </div>
-      </div>
+
+        <div class="display-flex">
+          <div class="navbartext">A new truly unique masterpiece each day .... for free</div>
+        </div>
+
+
+        <div>
+            <%= link_to "Sign up", new_user_registration_path, class: "home-signin-button" %>
+        </div>
+        <div>
+            <%= link_to "Sign in", new_user_session_path, class: "home-signin-button" %>
+        </div>
+      <% end %>
 
     </div>
-
-</div>
-
-
-
 </div>

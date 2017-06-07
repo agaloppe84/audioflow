@@ -61,6 +61,7 @@ body, html{
   align-items: center;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
 }
 
 #cover-art-big{
@@ -747,7 +748,26 @@ body, html{
   cursor: pointer;
 }
 
+.home-signin-button {
+  width: 110px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  border-radius: 3px;
+  color: white;
+  font-family: "Circular-Book";
+  background-color: rgba(50,50,50,0.1);
+  margin-top: 25px;
+}
 
 
+.display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
 

@@ -3,7 +3,7 @@
 
   <%= simple_form_for (@track) do |f| %>
     <%= f.input :name %>
-    <%= f.input :category, collection: @categories %>
+    <%= f.association :category, collection: @categories %>
     <%= f.input :artist %>
     <%= f.input :playable_at %>
     <%= f.input :audio, as: :attachinary %>
