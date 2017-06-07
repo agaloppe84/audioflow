@@ -1,9 +1,4 @@
-
-
-
-<div id="cover-art" style="background: linear-gradient(190deg, <%= @colors[:first] %>, <%= @colors[:second] %>);">
-    <div id="cover-art-small" class="test-image" style="justify-content: center;">
-
+ <% if user_signed_in? %>
 
         <div class="cas-body" style="letter-spacing: 4px;">GEM OF THE DAY</div>
 
@@ -17,17 +12,24 @@
         <div class="cas-body"><%= @tomorrow_track.name %></div>
 
 
-      <div class="bott-cont-fixed">
+      <% else %>
 
-        <i class="fa fa-diamond diamond-icon" aria-hidden="true" style="font-size: 16px;"></i>
-
+        <i class="fa fa-diamond diamond-icon" aria-hidden="true" style="font-size: 20px;"></i>
+        <div class="display-flex">
+          <div class="navbartext" style="font-size: 23px;">music</div>
+          <div class="navbartext-bold" style="font-size: 23px;">gem</div>
+        </div>
 
         <div class="display-flex">
           <div class="navbartext" style="font-size: 12px;">A new truly unique masterpiece each day .... for free</div>
         </div>
 
-      </div>
 
+        <div>
+            <%= link_to "Sign up", new_user_registration_path, class: "home-signin-button left-button" %>
+        </div>
+        <div>
+            <%= link_to "Sign in", new_user_session_path, class: "home-signin-button right-button" %>
+        </div>
 
-    </div>
-</div>
+      <% end %>
