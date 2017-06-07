@@ -86,6 +86,12 @@ $('#stop-button').on('click', function(){
 	wavesurfer.stop();
 });
 
+$('#toggle-volume').on('click', function(){
+  $(this).toggleClass('fa-volume-up');
+  $(this).toggleClass('fa-volume-off');
+  wavesurfer.toggleMute();
+});
+
 
 // Format time in minutes:seconds
 function formatTime(time){

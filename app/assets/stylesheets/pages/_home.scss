@@ -738,7 +738,14 @@ body, html{
 }
 
 
-
+#toggle-volume {
+  position: fixed;
+  right: 105px;
+  top: 27px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
 
 
 

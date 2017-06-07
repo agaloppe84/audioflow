@@ -12,6 +12,8 @@
 
   <div id="little-timer"></div>
 
+  <i class="fa fa-volume-up" id="toggle-volume" aria-hidden="true"></i>
+
 
   <div id="current-track" data-track="<%= cl_video_path(@track.audio.path, resource_type: 'video') %>" data-title="<%= @track.name %>" data-artist="<%= @track.artist %>" data-color="<%= @colors[:first] %>"></div>
 
