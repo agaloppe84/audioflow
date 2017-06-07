@@ -4,7 +4,7 @@
   <div id="cover-art" style="background: linear-gradient(190deg, <%= @colors[:first] %>, <%= @colors[:second] %>);">
     <div id="cover-art-small" class="test-image">
       <div class="cas-header"><%= @track.artist %></div>
-      <div class="cas-body"><%= @track.artist_description %></div>
+      <div class="cas-body"><%= @track.name %></div>
     </div>
   </div>
 
@@ -22,7 +22,7 @@
     <div id="wave"></div>
 
     <div class="second-bar visible-xs">
-      <div class="second-bar-relative">
+      <div class="second-bar-relative hidden">
         <div class="td-bold"><%= @track.name %></div>
         <div class="td-thin">by</div>
         <div class="td-bold"><%= @track.artist %></div>
@@ -40,7 +40,7 @@
 
       <div id="playlist">
         <div id="track-details" title="Show playlist">
-          <div id="track-desc" class="hidden-xs">
+          <div id="track-desc" class="hidden-xs hidden">
             <div class="td-bold"><%= @track.name %></div>
             <div class="td-thin">by</div>
             <div class="td-bold"><%= @track.artist %></div>

@@ -16,8 +16,8 @@ var currentTrackPath = $('#current-track').data("track");
 var currentTrackTitle = $('#current-track').data("title");
 var currentTrackArtist = $('#current-track').data("artist");
 var currentColor = $('#current-track').data("color");
-$('#spanslash').html('<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw smallspin"></i>')
-$('#total').html('')
+$('#spanslash').html('<div class="ball-container"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div></div>');
+$('#total').html('');
 
 
 var wavesurfer = Object.create(WaveSurfer);
@@ -41,6 +41,8 @@ wavesurfer.on('ready', function () {
   $('#total').text(formatTime(duration));
   $('#spanslash').text('/')
   $(".player-control").removeClass('hidden');
+  $('.second-bar-relative').removeClass('hidden');
+  $('#track-desc').removeClass('hidden');
 
   clearInterval(timer);
   timer = setInterval(function() {
