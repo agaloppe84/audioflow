@@ -41,6 +41,23 @@ class TracksController < ApplicationController
     end
   end
 
+  def week
+    @track_01 = Track.where(playable_at: (Date.today - 5.day)).last
+    @track_02 = Track.where(playable_at: (Date.today - 4.day)).last
+    @track_03 = Track.where(playable_at: (Date.today - 3.day)).last
+    @track_04 = Track.where(playable_at: (Date.today - 2.day)).last
+    @track_05 = Track.where(playable_at: (Date.today - 1.day)).last
+    @week_tracks = [@track_01, @track_02, @track_03, @track_04, @track_05].compact
+    @number = rand(0..5)
+    @colors = {}
+    @colors[:first] = dynamic_color(@number)
+    @colors[:second] = dynamic_color_lighter(@number)
+  end
+
+  def week_show
+    @track = Track.find(params[:id])
+  end
+
   private
 
   def tracks_params

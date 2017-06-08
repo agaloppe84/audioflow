@@ -1,0 +1,26 @@
+
+
+<div id="home-background" style="background: linear-gradient(190deg, <%= @colors[:first] %>, <%= @colors[:second] %>);">
+    <div id="cover-art-small" class="test-image" style="justify-content: center;">
+
+
+      <div class="cas-body" style="letter-spacing: 4px;">LAST 5 GEMS</div>
+
+      <% @week_tracks.each do |track| %>
+
+        <div class="cas-header"><%= track.artist %></div>
+        <div class="cas-body"><%= track.name %></div>
+        <%= link_to "listen", week_show_track_path(track), class: "home-signin-button" %>
+
+      <% end %>
+
+      <div class="bott-cont-fixed">
+        <i class="fa fa-diamond diamond-icon" aria-hidden="true" style="font-size: 16px;"></i>
+        <div class="display-flex">
+          <div class="navbartext" style="font-size: 12px;margin-left: 0;">A new truly unique masterpiece each day .... for free</div>
+        </div>
+      </div>
+
+
+    </div>
+</div>
