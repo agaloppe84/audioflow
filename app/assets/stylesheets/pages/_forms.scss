@@ -1,9 +1,6 @@
 
 .full-submit-button {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: "Circular-Medium";
   font-size: 13px;
   height: 40px;
@@ -83,10 +80,6 @@ input:-webkit-autofill {
 }
 
 @media (max-width: 768px) {
-  .form-paddings {
-    width: 90%;
-    margin-left: 5%;
-  }
   .full-submit-button {
     position: fixed;
     bottom: 30px;
@@ -119,8 +112,28 @@ input:-webkit-autofill {
 }
 
 
+.form-paddings {
+  width: 60%;
+  margin-left: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
-
+@media (max-width: 768px) {
+  .form-paddings {
+    width: 90%;
+    margin-left: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 60px;
+  }
+}
 
 
 
