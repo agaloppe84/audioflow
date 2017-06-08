@@ -1,0 +1,20 @@
+
+<div class="form-paddings">
+
+  <div class="form-header" style="color: <%= rand_font_color %>;">CREATE CATEGORY</div>
+
+  <%= simple_form_for (@category) do |f| %>
+
+    <div class="form-flex-container">
+        <div class="form-flex-icon"><i class="fa fa-headphones" aria-hidden="true"></i></div>
+        <%= f.input :name, label: false, placeholder: 'category name' %>
+    </div>
+
+    <%= f.submit "Create category", class: "full-submit-button" %>
+
+  <% end %>
+
+</div>
+
+
+

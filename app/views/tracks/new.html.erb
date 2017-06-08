@@ -1,22 +1,43 @@
 
 <div class="form-paddings">
 
+  <div class="form-header" style="color: <%= rand_font_color %>;">UPLOAD A GEM</div>
+
   <%= simple_form_for (@track) do |f| %>
-    <%= f.input :name %>
-    <%= f.association :category, collection: @categories %>
-    <%= f.input :artist %>
-    <%= f.input :year %>
-    <%= f.input :playable_at, as: :date %>
+    <div class="form-flex-container">
+      <div class="form-flex-icon"><i class="fa fa-headphones" aria-hidden="true"></i></div>
+      <%= f.input :name, label: false, placeholder: 'Track title' %>
+    </div>
+    <div class="form-flex-container">
+      <div class="form-flex-icon"><i class="fa fa-headphones" aria-hidden="true"></i></div>
+      <%= f.input :artist, label: false, placeholder: 'Artist' %>
+    </div>
+    <div class="form-flex-container">
+      <div class="form-flex-icon"><i class="fa fa-headphones" aria-hidden="true"></i></div>
+      <%= f.input :year, label: false, placeholder: 'Year' %>
+    </div>
+    <div class="form-flex-container">
+      <div class="form-flex-icon"><i class="fa fa-headphones" aria-hidden="true"></i></div>
+      <%= f.association :category, collection: @categories, label: false, selected: @categories.first %>
+    </div>
+    <div class="form-flex-container">
+      <div class="form-flex-icon"><i class="fa fa-headphones" aria-hidden="true"></i></div>
+      <%= f.input :playable_at, as: :date, label: false %>
+    </div>
+
     <%= f.input :audio, as: :attachinary %>
-    <%= f.submit "Go!!" %>
+    <%= f.submit "Create gem", class: "full-submit-button" %>
   <% end %>
+
+
 
 </div>
 
 
-
-<script>
-  $(document).ready(function() {
-    $('.attachinary-input').attachinary();
-  });
-</script>
+<% content_for :init_cloud do %>
+  <script>
+    $(document).ready(function() {
+      $('.attachinary-input').attachinary();
+    });
+  </script>
+<% end %>
