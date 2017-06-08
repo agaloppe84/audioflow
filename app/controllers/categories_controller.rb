@@ -2,6 +2,10 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    @number = rand(0..5)
+    @colors = {}
+    @colors[:first] = dynamic_color(@number)
+    @colors[:second] = dynamic_color_lighter(@number)
   end
 
   def new

@@ -17,6 +17,11 @@ class TracksController < ApplicationController
   def index
     @tracks = Track.order(:playable_at)
     @track = Track.all.where(playable_at: Date.today).last
+    @number = rand(0..5)
+    @colors = {}
+    @user = current_user
+    @colors[:first] = dynamic_color(@number)
+    @colors[:second] = dynamic_color_lighter(@number)
   end
 
   def create
@@ -56,6 +61,10 @@ class TracksController < ApplicationController
 
   def week_show
     @track = Track.find(params[:id])
+    @number = rand(0..5)
+    @colors = {}
+    @colors[:first] = dynamic_color(@number)
+    @colors[:second] = dynamic_color_lighter(@number)
   end
 
   private

@@ -1,0 +1,94 @@
+.tracks-index-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tracks-index-item {
+  width: 80%;
+  margin-left: 10%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.tracks-index-gem {
+  width: 80%;
+  margin-left: 10%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.tracks-index-header {
+  width: 80%;
+  margin-left: 10%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 80px;
+}
+
+.tracks-index-header-all {
+  width: 80%;
+  margin-left: 10%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 60px;
+}
+
+.tr-index-text {
+  font-family: "Circular-Book";
+  font-size: 16px;
+  color: white;
+  letter-spacing: 4px;
+}
+
+.diamond-icon-index {
+  font-size: 16px;
+  color: white;
+  margin-right: 10px;
+}
+
+.tii-text {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  color: white;
+}
+
+.flex-width {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+
+.admin-index-button {
+  font-family: "Circular-Bold";
+  font-size: 12px;
+  color: white;
+  width: 70px;
+  height: 30px;
+  border: 1px solid rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.horizontal-separator {
+  width: 70%;
+  border-bottom: 1px solid rgba(255,255,255,0.7);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
