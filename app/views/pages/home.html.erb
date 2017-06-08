@@ -33,7 +33,9 @@
         <div class="cas-header"><%= @tomorrow_track.artist %></div>
         <div class="cas-body"><%= @tomorrow_track.name %></div>
 
-        <%= link_to "LAST 5 GEMS", week_path, class: "week-button" %>
+        <% if user_signed_in? %>
+          <%= link_to "LAST 5 GEMS", week_path, class: "week-button" %>
+        <% end %>
 
 
       <div class="bott-cont-fixed">
