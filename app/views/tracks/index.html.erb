@@ -6,52 +6,89 @@
 
 
   <div class="tracks-index-header">
-    <div class="tr-index-text">GEM OF THE DAY</div>
+    <div class="tr-index-text"><%= "GEM OF THE DAY - #{(Date.today.strftime('%d %B')).upcase}" %></div>
   </div>
+
 
 
   <div class="tracks-index-gem">
-    <div class="tii-text"><%= @track.name %></div>
+    <div class="tii-text tti-text-width">Artist</div>
     <div class="separator"></div>
-    <div class="tii-text"><%= @track.artist %></div>
-    <div class="separator"></div>
-    <div class="tii-text"><%= @track.playable_at %></div>
+    <div class="tii-text text-bold"><%= @track.artist %></div>
   </div>
+
+  <div class="tracks-index-gem">
+    <div class="tii-text tti-text-width">Title</div>
+    <div class="separator"></div>
+    <div class="tii-text text-bold"><%= @track.name %></div>
+  </div>
+
+  <div class="tracks-index-gem">
+    <div class="tii-text tti-text-width">Style</div>
+    <div class="separator"></div>
+    <div class="tii-text text-bold"><%= @track.category.name %></div>
+  </div>
+
+  <div class="tracks-index-gem">
+    <div class="tii-text tti-text-width">Year</div>
+    <div class="separator"></div>
+    <div class="tii-text text-bold"><%= @track.year %></div>
+  </div>
+
+  <div class="tracks-index-gem">
+    <div class="tii-text tti-text-width">Day</div>
+    <div class="separator"></div>
+    <div class="tii-text text-bold"><%= @track.playable_at.strftime("%d %B %Y") %></div>
+  </div>
+
+
+
+
+
 
   <div class="tracks-index-header-all">
     <div class="tr-index-text">ALL GEMS</div>
   </div>
 
-   <% @tracks.each do |track| %>
+   <% @tracks.each_with_index do |track, index| %>
 
     <div class="tracks-index-item">
 
-      <div class="flex-width" style="width: 70%;">
-        <% if track.playable_at == Date.today %>
-          <i class="fa fa-diamond diamond-icon-index" aria-hidden="true"></i>
-        <% end %>
+      <div class="flex-width" style="width: 50%;">
 
-
-        <div class="tii-text"><%= track.name %></div>
+        <div class="tii-text text-bold" style="min-width: 12px;"><%= index + 1 %></div>
         <div class="separator"></div>
-        <div class="tii-text"><%= track.artist %></div>
+        <div class="tii-text text-medium lighter-track"><%= track.name %></div>
         <div class="separator"></div>
-        <div class="tii-text"><%= "#{track.playable_at}" %></div>
-     </div>
+        <div class="tii-text text-medium"><%= track.artist %></div>
 
-
-      <div class="flex-width" style="width: 30%;">
-        <%= link_to "edit track", edit_track_path(track), class: "admin-index-button" %>
       </div>
+
+     <div class="flex-width-end" style="width: 50%;">
+
+      <% if track.playable_at == Date.today %>
+        <div class="tii-text text-bold current-track">Gem of the day</div>
+      <% elsif track.playable_at < Date.today %>
+        <div class="tii-text text-bold done-track"><%= track.playable_at.strftime("%d %B %Y") %></div>
+      <% else %>
+        <div class="tii-text text-bold"><%= track.playable_at.strftime("%d %B %Y") %></div>
+      <% end %>
+
+      <div class="separator"></div>
+
+      <%= link_to edit_track_path(track), class: "admin-index-button" do %>
+        <i class="fa fa-pencil-square" aria-hidden="true"></i>
+      <% end %>
+     </div>
 
     </div>
 
-    <div class="horizontal-separator"></div>
+
 
    <% end %>
 
-  <div class="tracks-index-item">
-    <%= link_to "new track", new_track_path, class: "admin-index-button" %>
+  <div class="tracks-index-new-track">
+    <%= link_to "new track", new_track_path, class: "home-signin-button" %>
   </div>
 
 </div>

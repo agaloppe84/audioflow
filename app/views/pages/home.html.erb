@@ -5,22 +5,40 @@
     <div id="cover-art-small" class="test-image" style="justify-content: center;">
 
 
-        <div class="cas-body" style="letter-spacing: 4px;">GEM OF THE DAY</div>
+        <div class="cas-body current-track" style="letter-spacing: 4px;"><%= "TODAY - #{(Date.today.strftime('%d %B')).upcase}" %></div>
 
-        <div class="cas-header"><%= @track.artist %></div>
-        <div class="cas-body"><%= @track.name %></div>
+        <div class="flex-width-home">
+          <div class="tii-text text-medium lighter-track"><%= @track.artist.upcase %></div>
+          <div class="separator"></div>
+          <div class="tii-text text-medium lighter-track"><%= @track.name %></div>
+          <div class="separator"></div>
+          <div class="tii-text text-medium"><%= @track.year %></div>
+        </div>
 
         <% if user_signed_in? %>
-          <%= link_to "listen", track_path(@track), class: "home-signin-button" %>
+          <%= link_to track_path(@track) do %>
+            <div class="home-signin-button-bis">
+              <div>PLAY</div>
+              <i class="fa fa-headphones" aria-hidden="true"></i>
+            </div>
+          <% end %>
         <% else%>
 
           <div class="buttons-fixed-home">
-            <div>
-              <%= link_to "Sign up", new_user_registration_path, class: "home-signin-button left-button" %>
-            </div>
-            <div>
-              <%= link_to "Sign in", new_user_session_path, class: "home-signin-button right-button" %>
-            </div>
+             <%= link_to new_user_registration_path do %>
+              <div class="home-signin-button-bis-log">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <div>SIGNUP</div>
+              </div>
+            <% end %>
+
+            <%= link_to new_user_session_path do %>
+              <div class="home-signin-button-bis-log">
+                <div>SIGNIN</div>
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </div>
+            <% end %>
+
           </div>
 
 
@@ -28,13 +46,23 @@
 
 
 
-        <div class="cas-body" style="letter-spacing: 4px;margin-top: 50px;">GEM OF TOMMOROW</div>
+        <div class="cas-body current-track" style="letter-spacing: 4px;margin-top: 50px;"><%= "TOMORROW - #{(@tomorrow_track.playable_at.strftime('%d %B')).upcase}" %></div>
 
-        <div class="cas-header"><%= @tomorrow_track.artist %></div>
-        <div class="cas-body"><%= @tomorrow_track.name %></div>
+        <div class="flex-width-home">
+          <div class="tii-text text-medium lighter-track"><%= @tomorrow_track.artist.upcase %></div>
+          <div class="separator"></div>
+          <div class="tii-text text-medium lighter-track"><%= @tomorrow_track.name %></div>
+          <div class="separator"></div>
+          <div class="tii-text text-medium"><%= @tomorrow_track.year %></div>
+        </div>
 
         <% if user_signed_in? %>
-          <%= link_to "LAST 5 GEMS", week_path, class: "week-button" %>
+          <%= link_to week_path do %>
+            <div class="home-signin-button-bis-large">
+              <div>LAST 5 GEMS</div>
+              <i class="fa fa-diamond" aria-hidden="true"></i>
+            </div>
+          <% end %>
         <% end %>
 
 
