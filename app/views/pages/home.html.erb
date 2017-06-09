@@ -15,13 +15,14 @@
           <div class="tii-text text-medium"><%= @track.year %></div>
         </div>
 
-        <% if user_signed_in? %>
-          <%= link_to track_path(@track) do %>
+        <%= link_to track_path(@track) do %>
             <div class="home-signin-button-bis">
               <div>PLAY</div>
               <i class="fa fa-headphones" aria-hidden="true"></i>
             </div>
-          <% end %>
+        <% end %>
+
+        <% if user_signed_in? %>
         <% else%>
 
           <div class="buttons-fixed-home">
@@ -57,12 +58,14 @@
         </div>
 
         <% if user_signed_in? %>
+        <div class="buttons-fixed-home">
           <%= link_to week_path do %>
             <div class="home-signin-button-bis-large">
               <div>LAST 5 GEMS</div>
               <i class="fa fa-diamond" aria-hidden="true"></i>
             </div>
           <% end %>
+        </div>
         <% end %>
 
 
