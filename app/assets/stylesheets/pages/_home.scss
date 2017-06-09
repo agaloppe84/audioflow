@@ -876,8 +876,15 @@ body, html{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 70%;
   height: 30px;
+}
+
+
+@media (min-width: 768px){
+  .flex-width-home {
+    width: 70%;
+  }
 }
 
 

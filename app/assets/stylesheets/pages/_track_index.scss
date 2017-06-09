@@ -75,6 +75,26 @@
   text-overflow: ellipsis;
 }
 
+
+.tii-text-dark {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  color: rgba(55,55,55,0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.txt-spacing-4 {
+  letter-spacing: 4px;
+}
+
+.tii-head {
+  margin-right: 8px;
+}
+
+
+
 .tti-text-width {
   width: 35px;
 }
@@ -153,8 +173,24 @@
 .lighter-track {
   font-family: "Circular-Black";
 }
+.margin-on-today-gem {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(55,55,55,0.3);
+  border-bottom: 1px solid rgba(55,55,55,0.3);
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
 
 
+.diamond-dark {
+  color: rgba(55,55,55,0.7);
+}
 
 
 
