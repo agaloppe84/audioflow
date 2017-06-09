@@ -47,15 +47,7 @@
 
 
 
-        <div class="cas-body current-track" style="letter-spacing: 4px;margin-top: 50px;"><%= "TOMORROW - #{(@tomorrow_track.playable_at.strftime('%d %B')).upcase}" %></div>
 
-        <div class="flex-width-home">
-          <div class="tii-text text-medium lighter-track"><%= @tomorrow_track.artist.upcase %></div>
-          <div class="separator"></div>
-          <div class="tii-text text-medium lighter-track"><%= @tomorrow_track.name %></div>
-          <div class="separator"></div>
-          <div class="tii-text text-medium"><%= @tomorrow_track.year %></div>
-        </div>
 
         <% if user_signed_in? %>
         <div class="buttons-fixed-home">
@@ -70,9 +62,9 @@
 
 
       <div class="bott-cont-fixed">
-        <i class="fa fa-diamond diamond-icon" aria-hidden="true" style="font-size: 16px;"></i>
         <div class="display-flex">
-          <div class="navbartext" style="font-size: 12px;margin-left: 0;">A new truly unique masterpiece each day .... for free</div>
+          <div class="navbartext" style="font-size: 12px;margin-left: 0;">One unique masterpiece each day</div>
+          <i class="fa fa-heart" aria-hidden="true" style="font-size: 11px;color: white;margin-left: 8px;"></i>
         </div>
       </div>
 

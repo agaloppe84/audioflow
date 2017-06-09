@@ -1,0 +1,9 @@
+<div class="cas-body current-track" style="letter-spacing: 4px;margin-top: 50px;"><%= "TOMORROW - #{(@tomorrow_track.playable_at.strftime('%d %B')).upcase}" %></div>
+
+<div class="flex-width-home">
+  <div class="tii-text text-medium lighter-track"><%= @tomorrow_track.artist.upcase %></div>
+  <div class="separator"></div>
+  <div class="tii-text text-medium lighter-track"><%= @tomorrow_track.name %></div>
+  <div class="separator"></div>
+  <div class="tii-text text-medium"><%= @tomorrow_track.year %></div>
+</div>
