@@ -11,24 +11,16 @@
         <div class="margin-on-today-gem">
 
           <div class="flex-width-home">
-            <i class="fa fa-diamond diamond-dark" aria-hidden="true"></i>
+            <div class="tii-text text-medium lighter-track"><%= @track.artist.upcase %></div>
           </div>
           <div class="flex-width-home">
-            <div class="tii-text-dark tii-head">Artist</div>
-            <div class="tii-text-dark text-medium lighter-track"><%= @track.artist.upcase %></div>
+            <div class="tii-text text-medium lighter-track"><%= @track.name %></div>
           </div>
           <div class="flex-width-home">
-            <div class="tii-text-dark tii-head">Title</div>
-            <div class="tii-text-dark text-medium lighter-track"><%= @track.name %></div>
+            <div class="tii-text tii-head"><%= @track.category.name.upcase %></div>
+            <div class="tii-text"><%= @track.year %></div>
           </div>
-          <div class="flex-width-home">
-            <div class="tii-text-dark tii-head">Year</div>
-            <div class="tii-text-dark text-medium lighter-track"><%= @track.year %></div>
-          </div>
-          <div class="flex-width-home">
-            <div class="tii-text-dark tii-head">Style</div>
-            <div class="tii-text-dark text-medium lighter-track"><%= @track.category.name.upcase %></div>
-          </div>
+
 
         </div>
 
