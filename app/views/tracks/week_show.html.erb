@@ -104,6 +104,7 @@ wavesurfer.init({
   cursorWidth: 1,
   height: 80,
   waveColor: 'rgba(255,255,255,0.9)',
+  backend: 'MediaElement',
   progressColor: currentColor
 });
 
@@ -189,6 +190,14 @@ $(window).on('resize', function(){
     wavesurfer.drawBuffer();
   }
 });
+
+
+
+  var myAudio = document.getElementById('wave');
+  var goodAudio = myAudio.lastChild;
+  goodAudio.crossOrigin = "anonymous";
+
+
 
   </script>
 <% end %>

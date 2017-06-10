@@ -1,4 +1,10 @@
 
+<div id="my-peak-meter">
+</div>
+
+
+
+
 <div id="container">
 
   <div id="cover-art" style="background: linear-gradient(190deg, <%= @colors[:first] %>, <%= @colors[:second] %>);">
@@ -73,7 +79,11 @@
 
 
 <% content_for :sirihome do %>
+
   <script>
+
+
+
     var siriWave = new SiriWave({
     container: document.getElementById('siri-container'),
     width: 60,
@@ -104,6 +114,7 @@ wavesurfer.init({
   cursorWidth: 1,
   height: 80,
   waveColor: 'rgba(255,255,255,0.9)',
+  backend: 'MediaElement',
   progressColor: currentColor
 });
 
@@ -190,7 +201,17 @@ $(window).on('resize', function(){
   }
 });
 
+
+
+  var myAudio = document.getElementById('wave');
+  var goodAudio = myAudio.lastChild;
+  goodAudio.crossOrigin = "anonymous";
+
+
+
   </script>
+
+
 <% end %>
 
 
