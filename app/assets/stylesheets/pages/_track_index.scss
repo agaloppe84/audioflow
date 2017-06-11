@@ -208,4 +208,48 @@
   left: 50%;
 }
 
+#loading_flag {
+  background-color: rgba(255,255,255,0.3);
+  top: 15%;
+  margin-left: 25%;
+  width: 50%;
+  height: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  font-family: "Circular-Medium";
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+#custom_progress_bar {
+  height: 100%;
+  background-color: rgba(55,55,55,0.25);
+}
+
+.loading-flag-container {
+  position: fixed;
+  top: 15%;
+  width: 100%;
+  left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

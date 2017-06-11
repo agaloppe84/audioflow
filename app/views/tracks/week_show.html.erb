@@ -1,3 +1,11 @@
+<div class="loading-flag-container">
+
+  <div id="loading_flag">
+    <div id="custom_progress_bar"></div>
+  </div>
+
+</div>
+
 
 <div id="container">
 
@@ -75,16 +83,16 @@
 <% content_for :sirihome do %>
   <script>
     var siriWave = new SiriWave({
-    container: document.getElementById('siri-container'),
-    width: 60,
-    height: 20,
-    speed: 0.04,
-    color: '#fff',
-    frequency: 2.60,
-    autostart: false,
-    amplitudeInterpolationSpeed: 0.05,
-    style: 'default'
-});
+      container: document.getElementById('siri-container'),
+      width: 60,
+      height: 20,
+      speed: 0.04,
+      color: '#fff',
+      frequency: 2.60,
+      autostart: false,
+      amplitudeInterpolationSpeed: 0.05,
+      style: 'default'
+    });
 
 
 var timer = 0;
@@ -104,8 +112,11 @@ wavesurfer.init({
   cursorWidth: 1,
   height: 80,
   waveColor: 'rgba(255,255,255,0.9)',
+  normalize: true,
   progressColor: currentColor
 });
+
+
 
 
 wavesurfer.load(currentTrackPath);
@@ -188,6 +199,33 @@ $(window).on('resize', function(){
     wavesurfer.drawer.containerWidth = wavesurfer.drawer.container.clientWidth;
     wavesurfer.drawBuffer();
   }
+});
+
+
+
+
+
+
+var parentBar = document.getElementById("loading_flag");
+var downloadBar = document.getElementById("custom_progress_bar");
+
+
+function UpdateLoadingFlag(Percentage) {
+  if (parentBar) {
+
+    downloadBar.style.width = Percentage + '%';
+    if (Percentage >= 100) {
+      parentBar.style.display = "none";
+    } else {
+      parentBar.style.display = "flex";
+    }
+  }
+}
+
+
+// show progress while loading sound
+wavesurfer.on('loading', function(X, evt) {
+  UpdateLoadingFlag(X);
 });
 
 
