@@ -1,7 +1,10 @@
+<div class="loading-flag-container">
 
-<div id="my-peak-meter">
+  <div id="loading_flag">
+    <div id="custom_progress_bar"></div>
+  </div>
+
 </div>
-
 
 
 
@@ -34,13 +37,6 @@
 
     <div id="wave"></div>
 
-    <div class="second-bar visible-xs">
-      <div class="second-bar-relative hidden">
-        <div class="td-bold"><%= @track.name %></div>
-        <div class="td-thin">by</div>
-        <div class="td-bold"><%= @track.artist %></div>
-      </div>
-    </div>
 
 
     <div id="control-bar">
@@ -200,6 +196,37 @@ $(window).on('resize', function(){
     wavesurfer.drawBuffer();
   }
 });
+
+
+
+
+
+
+var parentBar = document.getElementById("loading_flag");
+var downloadBar = document.getElementById("custom_progress_bar");
+
+
+function UpdateLoadingFlag(Percentage) {
+  if (parentBar) {
+
+    downloadBar.style.width = Percentage + '%';
+    if (Percentage >= 100) {
+      parentBar.style.display = "none";
+    } else {
+      parentBar.style.display = "flex";
+    }
+  }
+}
+
+
+// show progress while loading sound
+wavesurfer.on('loading', function(X, evt) {
+  UpdateLoadingFlag(X);
+});
+
+
+
+
 
 
 
