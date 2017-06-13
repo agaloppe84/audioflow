@@ -1,0 +1,22 @@
+<div class="score_form_container hidden">
+
+  <%= simple_form_for([ @track, @vote ], remote: true) do |f| %>
+
+    <div class="collection-check-boxes">
+      <%= collection_radio_buttons(:vote, :status, Vote.statuses, :first, :first) do |b| %>
+        <label id="label-<%= b.text.downcase %>">
+          <%= b.radio_button %>
+          <div class="check-box" id="radio-<%= b.text.downcase %>">
+            <i class="fa fa-check checked" aria-hidden="true"></i>
+            <i class="fa fa-times unchecked" aria-hidden="true"></i>
+            <div class="b-text-font"><%= b.text %></div>
+          </div>
+        </label>
+      <% end %>
+    </div>
+
+    <%= f.submit "VOTE", class: "score_form_submit" %>
+  <% end %>
+
+
+</div>

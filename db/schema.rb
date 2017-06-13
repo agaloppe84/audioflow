@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607180952) do
+ActiveRecord::Schema.define(version: 20170612140226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,10 +42,11 @@ ActiveRecord::Schema.define(version: 20170607180952) do
     t.integer  "category_id"
     t.string   "artist"
     t.string   "duration"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.text     "artist_description"
     t.date     "playable_at"
+    t.integer  "play_count",         default: 0
     t.index ["category_id"], name: "index_tracks_on_category_id", using: :btree
   end
 
@@ -66,5 +67,14 @@ ActiveRecord::Schema.define(version: 20170607180952) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "track_id"
+    t.index ["track_id"], name: "index_votes_on_track_id", using: :btree
+  end
+
   add_foreign_key "tracks", "categories"
+  add_foreign_key "votes", "tracks"
 end

@@ -21,7 +21,12 @@ class ApplicationController < ActionController::Base
     @id = @day
     @tracks = Track.all
     @track = @tracks.find(@id - (@id - @tracks.count))
+  end
 
+  def set_to_played(track)
+    @track = track
+    @track.play_count += 1
+    @track.save
   end
 
 

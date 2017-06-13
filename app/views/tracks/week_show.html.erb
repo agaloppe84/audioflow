@@ -207,6 +207,7 @@ function UpdateLoadingFlag(Percentage) {
   if (parentBar) {
 
     downloadBar.style.width = Percentage + '%';
+    downloadBar.style.backgroundColor = currentColor;
     if (Percentage >= 100) {
       parentBar.style.display = "none";
     } else {

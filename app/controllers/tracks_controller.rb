@@ -8,10 +8,14 @@ class TracksController < ApplicationController
 
   def show
     @track = Track.all.where(playable_at: Date.today).last
+    @track.set_to_played
+    @vote = Vote.new
     @number = rand(0..5)
     @colors = {}
     @colors[:first] = dynamic_color(@number)
     @colors[:second] = dynamic_color_lighter(@number)
+    @good_votes = (@track.votes.where(status: "Like")).count
+    @bad_votes = (@track.votes.where(status: "Dislike")).count
   end
 
   def index

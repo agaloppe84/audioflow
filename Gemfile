@@ -25,9 +25,10 @@ gem 'wavesurfer-rails'
 
 
 group :development, :test do
-  gem 'binding_of_caller'
-  gem 'better_errors'
+  # gem 'binding_of_caller'
+  # gem 'better_errors'
 
+  gem 'web-console'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'

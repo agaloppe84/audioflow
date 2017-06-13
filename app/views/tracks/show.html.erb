@@ -6,6 +6,9 @@
 
 </div>
 
+<%= render "votes/form" %>
+
+
 
 
 <div id="container">
@@ -14,10 +17,17 @@
     <div id="cover-art-small" class="test-image">
       <div class="cas-header"><%= @track.artist %></div>
       <div class="cas-body"><%= @track.name %></div>
-      <div class="display-flex" style="height: 20px;">
+      <div class="display-flex" style="height: 20px; margin-top: 0;">
         <div class="small-infos-space"><%= @track.year %></div>
         <div class="separator"></div>
         <div class="small-infos-space"><%= @track.category.name.upcase %></div>
+      </div>
+      <div class="display-flex" style="height: 20px;">
+        <div class="socials-text"><%= "#{@track.play_count} Plays" %></div>
+        <div class="separator"></div>
+        <div id="vote-good-count" class="socials-text"><%= "#{@good_votes} Likes" %></div>
+        <div class="separator"></div>
+        <div id="vote-bad-count" class="socials-text"><%= "#{@bad_votes} Dislikes" %></div>
       </div>
     </div>
   </div>
@@ -126,6 +136,7 @@ wavesurfer.on('ready', function () {
   $(".player-control").removeClass('hidden');
   $('.second-bar-relative').removeClass('hidden');
   $('#track-desc').removeClass('hidden');
+  $('.score_form_container').removeClass('hidden');
 
   clearInterval(timer);
   timer = setInterval(function() {
@@ -210,6 +221,7 @@ function UpdateLoadingFlag(Percentage) {
   if (parentBar) {
 
     downloadBar.style.width = Percentage + '%';
+    downloadBar.style.backgroundColor = currentColor;
     if (Percentage >= 100) {
       parentBar.style.display = "none";
     } else {

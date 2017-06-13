@@ -44,6 +44,7 @@ wavesurfer.on('ready', function () {
   $('.second-bar-relative').removeClass('hidden');
   $('#track-desc').removeClass('hidden');
 
+
   clearInterval(timer);
   timer = setInterval(function() {
     $('#current').text(formatTime(wavesurfer.getCurrentTime()));

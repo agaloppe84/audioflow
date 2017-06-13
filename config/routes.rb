@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     member do
       get 'week_show'
     end
+    resources :votes
   end
+
+
+
 
 
   resources :categories

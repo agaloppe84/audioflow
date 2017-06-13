@@ -49,3 +49,94 @@
   border: none;
   font-size: 13px;
 }
+
+
+
+
+
+.collection-check-boxes {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  input, .checked  {
+    display: none;
+  }
+  label {
+    cursor: pointer;
+    font-weight: normal;
+  }
+  .check-box {
+    background: transparent;
+    border-radius: 3px;
+    width: 85px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 5px;
+    font-family: "Circular-Book";
+    font-size: 14px;
+  }
+
+  input:checked + .check-box .checked {
+    display: inline;
+  }
+  input:checked + .check-box .unchecked {
+    display: none;
+  }
+  input:checked + .check-box {
+  }
+}
+
+
+
+
+
+.socials-text {
+  font-size: 11px;
+  color: white;
+  font-family: "Circular-Medium";
+}
+
+
+.score_form_container {
+  position: fixed;
+  width: 60%;
+  height: 100px;
+  left: 20%;
+  top: 44%;
+  display: flex;
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 12px;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255,255,255,0.2);
+    position: relative;
+  }
+}
+
+
+
+.b-text-font {
+  margin-left: 6px;
+}
+
+
+.score_form_submit {
+  width: 100%;
+  height: 35px;
+  font-family: "Circular-Book";
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
