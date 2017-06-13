@@ -134,9 +134,13 @@
   font-size: 12px;
   letter-spacing: 3px;
   color: white;
-  background-color: transparent;
   border: none;
+  border-radius: 0 !important;
   bottom: 0;
   left: 0;
   position: absolute;
+}
+
+button {
+  border-radius: 0;
 }
