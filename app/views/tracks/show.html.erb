@@ -34,9 +34,8 @@
 
   <div id="siri-container"></div>
 
-  <div id="little-timer"></div>
 
-  <i class="fa fa-volume-up" id="toggle-volume" aria-hidden="true"></i>
+
 
 
   <div id="current-track" data-track="<%= cl_video_path(@track.audio.path, resource_type: 'video') %>" data-title="<%= @track.name %>" data-artist="<%= @track.artist %>" data-color="<%= @colors[:first] %>"></div>
@@ -92,8 +91,9 @@
 
     var siriWave = new SiriWave({
     container: document.getElementById('siri-container'),
-    width: 60,
-    height: 20,
+    cover: true,
+    width: 640,
+    height: 40,
     speed: 0.04,
     color: '#fff',
     frequency: 2.60,
@@ -141,7 +141,6 @@ wavesurfer.on('ready', function () {
   clearInterval(timer);
   timer = setInterval(function() {
     $('#current').text(formatTime(wavesurfer.getCurrentTime()));
-    $('#little-timer').text(formatTime(wavesurfer.getCurrentTime()));
     var amp = Math.floor(Math.random() * 2) + 0.5
     var amp2 = Math.floor(Math.random() * 0.5) + 0.1
     siriWave.setAmplitude(amp);
@@ -176,15 +175,8 @@ $('#pause-button').on('click', function () {
   siriWave.stop();
 });
 
-$('#stop-button').on('click', function(){
-  wavesurfer.stop();
-});
 
-$('#toggle-volume').on('click', function(){
-  $(this).toggleClass('fa-volume-up');
-  $(this).toggleClass('fa-volume-off');
-  wavesurfer.toggleMute();
-});
+
 
 
 // Format time in minutes:seconds

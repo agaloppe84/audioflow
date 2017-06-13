@@ -48,7 +48,6 @@ wavesurfer.on('ready', function () {
   clearInterval(timer);
   timer = setInterval(function() {
     $('#current').text(formatTime(wavesurfer.getCurrentTime()));
-    $('#little-timer').text(formatTime(wavesurfer.getCurrentTime()));
     var amp = Math.floor(Math.random() * 2) + 0.5
     var amp2 = Math.floor(Math.random() * 0.5) + 0.1
     siriWave.setAmplitude(amp);
